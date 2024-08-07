@@ -4,14 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flowise Chatbot</title>
+    <style>
+        /* Add custom styles here */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+        .chatbot-header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="chatbot-container">
+        <div class="chatbot-header">Chat with us!</div>
+        <!-- The chatbot will be injected here -->
+    </div>
     <script type="module">
-        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js";
         Chatbot.init({
             chatflowid: "b422098c-6090-4be7-9dac-61ac8913763c",
             apiHost: "https://flowiseai-railway-production-5810.up.railway.app",
-        })
+            container: document.getElementById('chatbot-container')
+        });
     </script>
-</head>
-<body>
 </body>
 </html>
